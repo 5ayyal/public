@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khayyal K. — Mobile Developer</title>
+<meta name="description" content="Independent mobile app developer. Creator of games and utilities for iOS and Android.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+:root {
+  --ink:       #0E0E10;
+  --ink-2:     #2A2A30;
+  --ink-3:     #5A5A65;
+  --cream:     #F5F0E8;
+  --cream-2:   #EDE7DA;
+  --gold:      #B8860B;
+  --gold-lt:   #D4A830;
+  --gold-dim:  rgba(184,134,11,0.12);
+  --line:      rgba(14,14,16,0.10);
+  --radius:    12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Noise texture overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.5;
+}
+
+/* ── Layout ── */
+.site-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── Nav ── */
+nav {
+  padding: 2rem 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav-logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--ink); }
+
+/* ── Hero ── */
+.hero {
+  padding: 7rem 0 5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-text {}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  background: var(--gold-dim);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--ink-3);
+  max-width: 480px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ink);
+  color: var(--cream);
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.hero-cta:hover {
+  background: var(--ink-2);
+  transform: translateY(-1px);
+}
+
+.hero-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dim) 0%, var(--cream-2) 100%);
+  border: 2px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 3rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+}
+
+/* ── Stats row ── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 4rem 0;
+  overflow: hidden;
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+
+.stat {
+  background: var(--cream);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.4rem;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ── Section titles ── */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ── Apps grid ── */
+.apps-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--line);
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.app-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.8rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.app-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  border-color: rgba(184,134,11,0.25);
+}
+
+.app-card:hover::before { opacity: 1; }
+
+.app-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #0A1428, #1B3A6B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.app-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.app-platform {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.app-desc {
+  font-size: 0.88rem;
+  color: var(--ink-3);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+.app-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.app-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--cream-2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  transition: all 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.app-link:hover {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+
+.app-link.primary {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+
+.app-link.primary:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: white;
+}
+
+.app-badge {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.app-badge.new {
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+.app-badge.coming {
+  background: #FFF7ED;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+/* ── About ── */
+.about-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--line);
+  animation: fadeUp 0.7s 0.35s ease both;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 0.98rem;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.skill-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  background: var(--cream-2);
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+  font-weight: 500;
+}
+
+.about-sidebar {}
+
+.about-fact {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-fact:first-child { border-top: 1px solid var(--line); }
+
+.fact-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.fact-value {
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+/* ── Contact ── */
+.contact-section {
+  padding: 4rem 0 6rem;
+  animation: fadeUp 0.7s 0.45s ease both;
+}
+
+.contact-box {
+  background: var(--ink);
+  border-radius: 20px;
+  padding: 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-box::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 240px; height: 240px;
+  background: radial-gradient(circle, rgba(184,134,11,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-box h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+}
+
+.contact-box p {
+  color: rgba(245,240,232,0.6);
+  font-size: 0.95rem;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.contact-email:hover {
+  background: var(--gold-lt);
+  transform: translateY(-1px);
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+footer a {
+  color: var(--ink-3);
+  text-decoration: none;
+}
+
+footer a:hover { color: var(--ink); }
+
+/* ── Responsive ── */
+@media (max-width: 680px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-avatar { display: none; }
+  .stats { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-box { padding: 2.5rem 1.5rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="site-wrap">
+
+  <!-- Nav -->
+  <nav>
+    <a href="#" class="nav-logo">Khayyal <span>K.</span></a>
+    <ul class="nav-links">
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Independent Developer</div>
+      <h1>Building apps<br>people <em>love</em><br>to use.</h1>
+      <p class="hero-desc">I design and develop mobile games and utilities for iOS and Android. Based in Saudi Arabia, building for the world.</p>
+      <a href="#apps" class="hero-cta">View my apps ↓</a>
+    </div>
+    <div class="hero-avatar">KK</div>
+  </section>
+
+
+  <!-- Apps -->
+  <section class="apps-section" id="apps">
+    <div class="section-header">
+      <h2 class="section-title">Apps</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="apps-grid">
+
+      <!-- Falconer -->
+      <div class="app-card">
+        <span class="app-badge new">New</span>
+        <div class="app-icon">🦅</div>
+        <div class="app-name">Falconer</div>
+        <div class="app-platform">iOS · Game</div>
+        <p class="app-desc">An endless desert sky runner. Tap to fly your falcon, dodge obstacles, collect feathers, and unlock legendary skins. Full Arabic & English support.</p>
+        <div class="app-links">
+          <a href="#" class="app-link primary">App Store</a>
+          <a href="support.html" class="app-link">Support</a>
+        </div>
+      </div>
+
+      <!-- Placeholder for future apps -->
+      <div class="app-card" style="opacity:0.5; pointer-events:none;">
+        <span class="app-badge coming">Coming Soon</span>
+        <div class="app-icon" style="background: linear-gradient(135deg,#1a1a2e,#2C2C4A);">🚀</div>
+        <div class="app-name">Next App</div>
+        <div class="app-platform">iOS · Android</div>
+        <p class="app-desc">Something new is in the works. Stay tuned.</p>
+        <div class="app-links">
+          <a href="#" class="app-link">Coming Soon</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about-section" id="about">
+    <div class="section-header">
+      <h2 class="section-title">About</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm an independent mobile developer focused on creating polished, enjoyable experiences for everyday users. I build everything from the ground up — design, code, and launch.</p>
+        <p>My apps are built with a focus on simplicity, performance, and cultural relevance for the Arab world. I believe the best apps feel effortless to use.</p>
+        <p>Every app I ship is something I would use myself.</p>
+        <div class="about-skills">
+          <span class="skill-tag">Swift</span>
+          <span class="skill-tag">iOS</span>
+          <span class="skill-tag">SpriteKit</span>
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Android</span>
+          <span class="skill-tag">AdMob</span>
+          <span class="skill-tag">UI/UX</span>
+          <span class="skill-tag">Arabic</span>
+        </div>
+      </div>
+
+      <div class="about-sidebar">
+        <div class="about-fact">
+          <div class="fact-label">Location</div>
+          <div class="fact-value">Medina, Saudi Arabia 🇸🇦</div>
+        </div>
+        <div class="about-fact">
+          <div class="fact-label">Platforms</div>
+          <div class="fact-value">iOS · Android</div>
+        </div>
+        <div class="about-fact">
+          <div class="fact-label">Languages</div>
+          <div class="fact-value">Arabic · English</div>
+        </div>
+        <div class="about-fact">
+          <div class="fact-label">Focus</div>
+          <div class="fact-value">Games · Utilities</div>
+        </div>
+        <div class="about-fact">
+          <div class="fact-label">Available for</div>
+          <div class="fact-value">App development · Freelance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section" id="contact">
+    <div class="contact-box">
+      <h2>Get in touch</h2>
+      <p>Questions about an app, collaboration ideas, or just want to say hello — my inbox is open.</p>
+      <a href="mailto:khayyal@kherais.com" class="contact-email">
+        ✉ khayyal@kherais.com
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span>© 2026 Khayyal K. All rights reserved.</span>
+    <span>
+      <a href="support.html">Support</a> &nbsp;·&nbsp;
+      <a href="falconer-privacy-policy.html">Privacy Policy</a>
+    </span>
+  </footer>
+
+</div><!-- /site-wrap -->
+
+</body>
+</html>
