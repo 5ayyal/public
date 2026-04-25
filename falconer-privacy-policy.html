@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falconer — Privacy Policy | سياسة الخصوصية</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap');
+
+  :root {
+    --gold: #F5C842;
+    --gold-dark: #C8860A;
+    --sky: #04060E;
+    --sky-mid: #0A1428;
+    --sky-light: #0D1C3A;
+    --text: #E8E0D0;
+    --text-muted: rgba(232,224,208,0.6);
+    --card: rgba(13,28,58,0.7);
+    --border: rgba(245,200,66,0.2);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: linear-gradient(160deg, var(--sky) 0%, var(--sky-mid) 45%, #1A0E04 100%);
+    min-height: 100vh;
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* Stars */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 8%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 28% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(2px 2px at 45% 5%, rgba(255,255,255,0.9) 0%, transparent 100%),
+      radial-gradient(1px 1px at 67% 12%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 82% 7%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 91% 18%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 22%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(2px 2px at 55% 20%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 38% 25%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 75% 22%, rgba(255,255,255,0.7) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .falcon-icon {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+  }
+
+  .falcon-icon svg {
+    filter: drop-shadow(0 0 18px rgba(245,200,66,0.5));
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+
+  .arabic-title {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--gold);
+    direction: rtl;
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: 'Source Sans 3', sans-serif;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+
+  .lang-btn.active, .lang-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(245,200,66,0.07);
+  }
+
+  /* Sections */
+  .section {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .section:hover { border-color: rgba(245,200,66,0.4); }
+
+  .section-number {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .ar h2, .ar p, .ar li, .ar .section-number {
+    font-family: 'Noto Naskh Arabic', serif;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .ar .section { direction: rtl; }
+
+  p { margin-bottom: 0.85rem; font-size: 0.95rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+
+  ul li {
+    font-size: 0.95rem;
+    padding: 0.3rem 0 0.3rem 1.4rem;
+    position: relative;
+    color: var(--text);
+  }
+
+  ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--gold-dark);
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .ar ul li { padding: 0.3rem 1.4rem 0.3rem 0; }
+  .ar ul li::before { left: auto; right: 0; }
+
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(245,200,66,0.3); }
+  a:hover { border-color: var(--gold); }
+
+  .highlight {
+    background: rgba(245,200,66,0.08);
+    border-left: 3px solid var(--gold-dark);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0.8rem 0;
+    font-size: 0.9rem;
+  }
+
+  .ar .highlight { border-left: none; border-right: 3px solid var(--gold-dark); border-radius: 8px 0 0 8px; }
+
+  footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .lang-section { display: none; }
+  .lang-section.visible { display: block; }
+
+  @media (max-width: 600px) {
+    .section { padding: 1.5rem 1.2rem; }
+    .container { padding: 2rem 1rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="falcon-icon">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="31" fill="rgba(10,20,40,0.8)" stroke="rgba(245,200,66,0.4)" stroke-width="1.5"/>
+        <!-- Wings -->
+        <path d="M32 28 L8 22 L12 32 L32 34Z" fill="#5C3A0A"/>
+        <path d="M32 28 L56 22 L52 32 L32 34Z" fill="#5C3A0A"/>
+        <path d="M32 28 L10 24 L14 31 L32 32Z" fill="#8B5E1A"/>
+        <path d="M32 28 L54 24 L50 31 L32 32Z" fill="#8B5E1A"/>
+        <!-- Body -->
+        <ellipse cx="32" cy="33" rx="7" ry="12" fill="#8B5E1A"/>
+        <!-- Head -->
+        <circle cx="33" cy="22" r="6" fill="#5C3A0A"/>
+        <!-- Eye -->
+        <circle cx="35" cy="21" r="2.5" fill="#F5C842"/>
+        <circle cx="35" cy="21" r="1.2" fill="#0A0A0A"/>
+        <!-- Beak -->
+        <path d="M38 22 L44 20 L42 23Z" fill="#D4821A"/>
+        <!-- Tail -->
+        <path d="M28 44 L30 52 L32 53 L34 52 L36 44Z" fill="#5C3A0A"/>
+      </svg>
+    </div>
+
+    <h1>Falconer</h1>
+    <span class="arabic-title">الصقار</span>
+    <p class="meta">Privacy Policy &nbsp;·&nbsp; سياسة الخصوصية</p>
+    <p class="meta" style="margin-top:0.4rem">Effective Date: April 24, 2026</p>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">🇬🇧 English</button>
+      <button class="lang-btn" onclick="setLang('ar')">🇸🇦 العربية</button>
+    </div>
+  </header>
+
+  <!-- ═══════════════ ENGLISH ═══════════════ -->
+  <div id="en" class="lang-section visible">
+
+    <div class="section">
+      <div class="section-number">Section 01</div>
+      <h2>Introduction</h2>
+      <p>Welcome to <strong>Falconer: Desert Sky Runner</strong> ("the App"), developed and operated by Khayyal Kherais ("we", "us", or "our"). This Privacy Policy explains how we handle information when you use our mobile application.</p>
+      <p>By downloading or using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 02</div>
+      <h2>Information We Collect</h2>
+      <p>The App itself does not directly collect, store, or transmit any personally identifiable information (PII). We do not require account creation, login, or any form of registration.</p>
+      <p>The following data is stored <strong>locally on your device only</strong>:</p>
+      <ul>
+        <li>Your best score and current score</li>
+        <li>Feather currency balance</li>
+        <li>Equipped and unlocked falcon skins</li>
+        <li>Language preference (English or Arabic)</li>
+        <li>Audio mute preference</li>
+      </ul>
+      <div class="highlight">This data never leaves your device. It is not sent to any server and is not accessible to us.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 03</div>
+      <h2>Third-Party Advertising (Google AdMob)</h2>
+      <p>The App displays advertisements served by <strong>Google AdMob</strong>, a third-party advertising service operated by Google LLC. AdMob may collect and use certain information to serve personalised or contextual advertisements, including:</p>
+      <ul>
+        <li>Advertising identifiers (IDFA on iOS / GAID on Android)</li>
+        <li>IP address and approximate location</li>
+        <li>Device type, operating system, and language</li>
+        <li>App usage data and ad interaction data</li>
+      </ul>
+      <p>This data collection is governed by Google's own privacy policies. We encourage you to review them:</p>
+      <p>
+        <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy →</a><br>
+        <a href="https://support.google.com/admob/answer/6128543" target="_blank">How Google uses data in AdMob →</a>
+      </p>
+      <div class="highlight">You can opt out of personalised advertising at any time through your device settings: <br><strong>iOS:</strong> Settings → Privacy & Security → Tracking → disable "Allow Apps to Request to Track"</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 04</div>
+      <h2>Rewarded Advertisements</h2>
+      <p>The App offers optional rewarded video advertisements. Watching these ads is entirely voluntary — they are offered in exchange for in-game rewards (feathers currency or falcon revival). You are never required to watch an ad to continue playing.</p>
+      <p>Rewarded ads are also served by Google AdMob and are subject to the same data practices described in Section 03.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 05</div>
+      <h2>Encryption</h2>
+      <p>The App uses standard HTTPS/TLS encryption for all network communications, including ad requests. This is the industry-standard encryption provided by the iOS operating system. We do not implement any proprietary or custom encryption algorithms.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 06</div>
+      <h2>Children's Privacy</h2>
+      <p>The App is rated 4+ and is suitable for all ages. We do not knowingly collect personal information from children under the age of 13. If you believe a child has provided personal information through the App, please contact us and we will take appropriate action.</p>
+      <p>Note that Google AdMob may serve ads based on contextual signals. For family-directed apps, AdMob can be configured to serve non-personalised ads only.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 07</div>
+      <h2>Data Retention</h2>
+      <p>Since we do not collect personal data on our servers, there is no data retention on our end. All game data stored locally on your device can be deleted at any time by uninstalling the App.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 08</div>
+      <h2>Your Rights</h2>
+      <p>Depending on your jurisdiction, you may have rights regarding your personal data. Since we do not collect personal data ourselves, these rights primarily apply to data held by Google AdMob. You may exercise those rights directly through Google's privacy controls at:</p>
+      <p><a href="https://myaccount.google.com/data-and-privacy" target="_blank">myaccount.google.com/data-and-privacy →</a></p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 09</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically. Continued use of the App after changes constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 10</div>
+      <h2>Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the App, please contact us at:</p>
+      <p><strong>Developer:</strong> Khayyal Kherais<br>
+      <strong>App:</strong> Falconer: Desert Sky Runner<br>
+      <strong>Email:</strong> <a href="mailto:support@falconergame.com">support@falconergame.com</a></p>
+      <p style="font-size:0.85rem; color: var(--text-muted);">(Replace with your actual contact email before publishing)</p>
+    </div>
+
+  </div><!-- /en -->
+
+  <!-- ═══════════════ ARABIC ═══════════════ -->
+  <div id="ar" class="lang-section ar">
+
+    <div class="section">
+      <div class="section-number">القسم ٠١</div>
+      <h2>مقدمة</h2>
+      <p>مرحباً بك في <strong>الصقار: سباق سماء الصحراء</strong> ("التطبيق")، الذي طوّره وأداره جاد طيبة ("نحن" أو "المطوّر"). توضّح سياسة الخصوصية هذه كيفية التعامل مع المعلومات عند استخدامك للتطبيق.</p>
+      <p>باستخدامك للتطبيق أو تنزيله، فإنك توافق على الممارسات الموضحة في هذه السياسة. إذا كنت لا توافق، يُرجى عدم استخدام التطبيق.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٢</div>
+      <h2>المعلومات التي نجمعها</h2>
+      <p>لا يقوم التطبيق بجمع أي معلومات شخصية أو تخزينها أو إرسالها مباشرةً. لا يتطلب التطبيق إنشاء حساب أو تسجيل الدخول أو أي نوع من التسجيل.</p>
+      <p>يتم تخزين البيانات التالية <strong>محلياً على جهازك فقط</strong>:</p>
+      <ul>
+        <li>أفضل نتيجة لك والنتيجة الحالية</li>
+        <li>رصيد عملة الريش</li>
+        <li>أزياء الصقر المجهّزة والمفتوحة</li>
+        <li>تفضيل اللغة (العربية أو الإنجليزية)</li>
+        <li>إعداد كتم الصوت</li>
+      </ul>
+      <div class="highlight">لا تغادر هذه البيانات جهازك أبداً. لا تُرسل إلى أي خادم ولا يمكننا الوصول إليها.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٣</div>
+      <h2>الإعلانات من طرف ثالث (Google AdMob)</h2>
+      <p>يعرض التطبيق إعلانات تقدّمها خدمة <strong>Google AdMob</strong>، وهي خدمة إعلانية تابعة لشركة Google LLC. قد تجمع AdMob معلومات معيّنة لتقديم إعلانات مخصّصة أو سياقية، تشمل:</p>
+      <ul>
+        <li>معرّفات الإعلانات (IDFA على iOS)</li>
+        <li>عنوان IP والموقع التقريبي</li>
+        <li>نوع الجهاز ونظام التشغيل واللغة</li>
+        <li>بيانات استخدام التطبيق والتفاعل مع الإعلانات</li>
+      </ul>
+      <p>تخضع هذه البيانات لسياسة خصوصية Google الخاصة. نشجعك على الاطلاع عليها:</p>
+      <p>
+        <a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google ←</a><br>
+        <a href="https://support.google.com/admob/answer/6128543" target="_blank">كيف تستخدم Google البيانات في AdMob ←</a>
+      </p>
+      <div class="highlight">يمكنك إلغاء الاشتراك في الإعلانات المخصّصة في أي وقت عبر إعدادات جهازك:<br><strong>iOS:</strong> الإعدادات ← الخصوصية والأمان ← التتبع ← أوقف "السماح للتطبيقات بطلب التتبع"</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٤</div>
+      <h2>الإعلانات المكافِئة</h2>
+      <p>يقدّم التطبيق إعلانات فيديو مكافِئة اختيارية. مشاهدة هذه الإعلانات طوعية تماماً — تُعرض مقابل مكافآت داخل اللعبة (عملة الريش أو إحياء الصقر). لا يُطلب منك مطلقاً مشاهدة إعلان لمواصلة اللعب.</p>
+      <p>تقدّم هذه الإعلانات أيضاً Google AdMob وتخضع لممارسات البيانات ذاتها الموضّحة في القسم ٠٣.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٥</div>
+      <h2>التشفير</h2>
+      <p>يستخدم التطبيق تشفير HTTPS/TLS القياسي لجميع الاتصالات الشبكية، بما في ذلك طلبات الإعلانات. هذا هو التشفير المعياري الذي يوفره نظام iOS. لا نُطبّق أي خوارزميات تشفير مخصّصة أو خاصّة.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٦</div>
+      <h2>خصوصية الأطفال</h2>
+      <p>التطبيق مصنّف +4 ومناسب لجميع الأعمار. لا نجمع عن قصد معلومات شخصية من الأطفال دون سن 13 عاماً. إذا كنت تعتقد أن طفلاً قدّم معلومات شخصية عبر التطبيق، يُرجى التواصل معنا وسنتخذ الإجراء المناسب.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٧</div>
+      <h2>الاحتفاظ بالبيانات</h2>
+      <p>بما أننا لا نجمع بيانات شخصية على خوادمنا، فلا يوجد احتفاظ بأي بيانات من جهتنا. يمكن حذف جميع بيانات اللعبة المخزّنة محلياً على جهازك في أي وقت عن طريق إلغاء تثبيت التطبيق.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٨</div>
+      <h2>حقوقك</h2>
+      <p>بناءً على ولايتك القضائية، قد تتمتع بحقوق تتعلق ببياناتك الشخصية. نظراً لأننا لا نجمع بيانات شخصية بأنفسنا، تنطبق هذه الحقوق بشكل أساسي على البيانات التي تحتفظ بها Google AdMob. يمكنك ممارسة هذه الحقوق مباشرةً عبر أدوات تحكم خصوصية Google.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٩</div>
+      <h2>التعديلات على هذه السياسة</h2>
+      <p>قد نُحدّث سياسة الخصوصية هذه من وقت لآخر. ستنعكس أي تغييرات على هذه الصفحة مع تحديث تاريخ السريان. نشجعك على مراجعة هذه السياسة بشكل دوري. استمرارك في استخدام التطبيق بعد التغييرات يُعدّ قبولاً للسياسة المحدّثة.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ١٠</div>
+      <h2>تواصل معنا</h2>
+      <p>إذا كانت لديك أي أسئلة أو مخاوف بشأن سياسة الخصوصية هذه أو التطبيق، يُرجى التواصل معنا عبر:</p>
+      <p><strong>المطوّر:</strong> جاد طيبة<br>
+      <strong>التطبيق:</strong> الصقار: سباق سماء الصحراء<br>
+      <strong>البريد الإلكتروني:</strong> <a href="mailto:support@falconergame.com">support@falconergame.com</a></p>
+      <p style="font-size:0.85rem; color: var(--text-muted);">(استبدل هذا بعنوان بريدك الإلكتروني الفعلي قبل النشر)</p>
+    </div>
+
+  </div><!-- /ar -->
+
+  <footer>
+    <p>Falconer: Desert Sky Runner &nbsp;·&nbsp; الصقار</p>
+    <p style="margin-top:0.4rem">© 2026 Khayyal Kherais. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.getElementById('en').classList.toggle('visible', lang === 'en');
+    document.getElementById('ar').classList.toggle('visible', lang === 'ar');
+    document.querySelectorAll('.lang-btn').forEach((b, i) => {
+      b.classList.toggle('active', (i === 0 && lang === 'en') || (i === 1 && lang === 'ar'));
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }
+</script>
+</body>
+</html>
