@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Khayyal K. Apps | سياسة الخصوصية</title>
+<meta name="description" content="Privacy policy for all mobile apps developed by Khayyal K.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap');
+
+  :root {
+    --accent:      #4F8EF7;
+    --accent-dark: #2563EB;
+    --accent-dim:  rgba(79,142,247,0.12);
+    --bg-top:      #04060F;
+    --bg-mid:      #080E1C;
+    --bg-low:      #0D1528;
+    --text:        #E4E8F0;
+    --text-muted:  rgba(228,232,240,0.55);
+    --card:        rgba(13,21,40,0.75);
+    --border:      rgba(79,142,247,0.18);
+    --border-hl:   rgba(79,142,247,0.40);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: linear-gradient(160deg, var(--bg-top) 0%, var(--bg-mid) 50%, var(--bg-low) 100%);
+    min-height: 100vh;
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* Subtle grid texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(79,142,247,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,142,247,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow orbs */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -120px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(79,142,247,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  /* ── Header ── */
+  header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(79,142,247,0.25);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.4rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+    line-height: 1.15;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .arabic-title {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    color: var(--accent);
+    direction: rtl;
+    display: block;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+  }
+
+  .meta {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: 'Source Sans 3', sans-serif;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+
+  .lang-btn.active, .lang-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  /* ── Sections ── */
+  .section {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s;
+  }
+
+  .section:hover { border-color: var(--border-hl); }
+
+  .section-number {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.93rem;
+    color: var(--text-muted);
+    margin-bottom: 0.85rem;
+  }
+  p:last-child { margin-bottom: 0; }
+  p strong { color: var(--text); font-weight: 600; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+
+  ul li {
+    font-size: 0.93rem;
+    color: var(--text-muted);
+    padding: 0.28rem 0 0.28rem 1.4rem;
+    position: relative;
+  }
+
+  ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(79,142,247,0.3);
+    transition: border-color 0.2s;
+  }
+
+  a:hover { border-color: var(--accent); }
+
+  .highlight {
+    background: rgba(79,142,247,0.07);
+    border-left: 3px solid var(--accent-dark);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0.8rem 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  /* ── Arabic RTL ── */
+  .ar h2, .ar p, .ar li, .ar .section-number, .ar .highlight {
+    font-family: 'Noto Naskh Arabic', serif;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .ar { direction: rtl; }
+  .ar ul li { padding: 0.28rem 1.4rem 0.28rem 0; }
+  .ar ul li::before { left: auto; right: 0; }
+  .ar .highlight { border-left: none; border-right: 3px solid var(--accent-dark); border-radius: 8px 0 0 8px; }
+
+  /* ── Visibility ── */
+  .lang-section { display: none; }
+  .lang-section.visible { display: block; }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  footer a {
+    color: var(--text-muted);
+    border-bottom: none;
+  }
+
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .section { padding: 1.5rem 1.2rem; }
+    .container { padding: 2rem 1rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="badge">Legal · Privacy</div>
+    <h1>Privacy <span>Policy</span></h1>
+    <span class="arabic-title">سياسة الخصوصية</span>
+    <p class="meta">Khayyal K. — All Apps &nbsp;·&nbsp; Effective: April 25, 2026</p>
+
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">🇬🇧 English</button>
+      <button class="lang-btn" onclick="setLang('ar')">🇸🇦 العربية</button>
+    </div>
+  </header>
+
+  <!-- ═══════════ ENGLISH ═══════════ -->
+  <div id="en" class="lang-section visible">
+
+    <div class="section">
+      <div class="section-number">Section 01</div>
+      <h2>Introduction & Scope</h2>
+      <p>This Privacy Policy applies to all mobile applications ("Apps") developed and published by <strong>Khayyal K.</strong> ("we", "us", or "our"), available on the Apple App Store and Google Play Store.</p>
+      <p>By downloading or using any of our Apps, you agree to the practices described in this policy. If you do not agree, please do not use the App.</p>
+      <div class="highlight">This is a general policy that covers all our apps. Some apps may have their own supplemental privacy policy for app-specific features.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 02</div>
+      <h2>Information We Do Not Collect</h2>
+      <p>Our Apps are designed with privacy in mind. We do <strong>not</strong>:</p>
+      <ul>
+        <li>Require you to create an account or register</li>
+        <li>Collect your name, email address, or any contact information</li>
+        <li>Access your contacts, camera, microphone, or location (unless explicitly required for a specific app feature and disclosed at the time of permission request)</li>
+        <li>Track you across other apps or websites</li>
+        <li>Sell your data to any third party</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 03</div>
+      <h2>Data Stored Locally on Your Device</h2>
+      <p>Most of our Apps store preference and progress data <strong>locally on your device only</strong>, using the platform's standard storage (UserDefaults on iOS, SharedPreferences on Android). This typically includes:</p>
+      <ul>
+        <li>App settings and preferences (e.g. language, sound on/off)</li>
+        <li>Game progress, scores, and unlocked content</li>
+        <li>In-app currency balances</li>
+      </ul>
+      <div class="highlight">This data never leaves your device. It is not transmitted to our servers and is not accessible to us. Deleting the App removes this data permanently.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 04</div>
+      <h2>Third-Party Services</h2>
+      <p>Our Apps may integrate third-party services that have their own privacy practices. These may include:</p>
+
+      <p><strong>Google AdMob (Advertising)</strong><br>
+      Apps that display advertisements use Google AdMob. AdMob may collect device identifiers, IP address, and usage data to serve relevant ads. This is governed by Google's Privacy Policy.</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy →</a></li>
+        <li><a href="https://support.google.com/admob/answer/6128543" target="_blank">How Google uses AdMob data →</a></li>
+      </ul>
+
+      <p style="margin-top:1rem"><strong>Apple / Google Platform Services</strong><br>
+      Our Apps run on iOS and Android platforms. Apple and Google may collect diagnostic and performance data under their own privacy policies, independent of our Apps.</p>
+
+      <div class="highlight">We carefully select third-party services and only include those necessary for core app functionality (advertising, analytics). We do not integrate social networks, tracking SDKs, or data brokers.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 05</div>
+      <h2>Advertising & Opt-Out</h2>
+      <p>Apps that are free to download are supported by advertising. We use <strong>Google AdMob</strong> to display ads. You can limit ad personalisation at any time:</p>
+      <ul>
+        <li><strong>iOS:</strong> Settings → Privacy & Security → Tracking → disable "Allow Apps to Request to Track"</li>
+        <li><strong>Android:</strong> Settings → Google → Ads → "Delete advertising ID" or "Opt out of Ads Personalisation"</li>
+      </ul>
+      <p>Opting out means you may see less relevant ads, but the App will continue to function normally. Ads help us keep our Apps free for everyone.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 06</div>
+      <h2>Rewarded Advertisements</h2>
+      <p>Some of our Apps offer optional rewarded video advertisements in exchange for in-app benefits (such as virtual currency or extra lives). These are always <strong>voluntary</strong> — you are never required to watch an ad to use the core features of the App.</p>
+      <p>If a rewarded ad fails to load, the in-app reward is still granted to avoid penalising you for network or ad availability issues.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 07</div>
+      <h2>Encryption</h2>
+      <p>All network communications made by our Apps (including ad requests and any optional analytics) use industry-standard <strong>HTTPS/TLS encryption</strong> provided by the iOS and Android operating systems. We do not implement custom or proprietary encryption algorithms.</p>
+      <p>Our Apps qualify for the standard encryption exemption under US Export Administration Regulations (EAR) as they use only standard OS-provided encryption for HTTPS communications.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 08</div>
+      <h2>Children's Privacy</h2>
+      <p>Our Apps are not directed at children under the age of 13 (or 16 in some jurisdictions). We do not knowingly collect personal information from children.</p>
+      <p>If you are a parent or guardian and believe your child has provided personal information through one of our Apps, please contact us at <a href="mailto:khayyal@kherais.com">khayyal@kherais.com</a> and we will promptly delete any such information.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 09</div>
+      <h2>Data Retention</h2>
+      <p>Since we do not collect personal data on our servers, there is nothing to retain on our end. Any data stored locally on your device is retained until you uninstall the App, at which point it is permanently deleted by the operating system.</p>
+      <p>Data collected by third-party services (such as Google AdMob) is subject to their own retention policies.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 10</div>
+      <h2>Your Rights</h2>
+      <p>Depending on your location, you may have rights including access, correction, deletion, and portability of your personal data. As we do not collect personal data ourselves, these rights apply primarily to data held by our third-party service providers.</p>
+      <ul>
+        <li><strong>Google data:</strong> <a href="https://myaccount.google.com/data-and-privacy" target="_blank">myaccount.google.com/data-and-privacy →</a></li>
+        <li><strong>Apple data:</strong> <a href="https://privacy.apple.com" target="_blank">privacy.apple.com →</a></li>
+        <li><strong>Contact us:</strong> <a href="mailto:khayyal@kherais.com">khayyal@kherais.com</a></li>
+      </ul>
+      <p>For residents of the EU/EEA (GDPR), California (CCPA), or Saudi Arabia (PDPL), you may submit requests to exercise your rights by emailing us directly.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 11</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our Apps, legal requirements, or third-party services. When we do, we will update the effective date at the top of this page.</p>
+      <p>We encourage you to review this policy periodically. Continued use of any of our Apps after changes constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">Section 12</div>
+      <h2>Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the privacy practices of any of our Apps, please contact us:</p>
+      <p>
+        <strong>Developer:</strong> Khayyal K.<br>
+        <strong>Email:</strong> <a href="mailto:khayyal@kherais.com">khayyal@kherais.com</a><br>
+        <strong>Website:</strong> <a href="developer.html">Developer page →</a>
+      </p>
+      <p>We aim to respond to all privacy-related inquiries within <strong>72 hours</strong>.</p>
+    </div>
+
+  </div><!-- /en -->
+
+  <!-- ═══════════ ARABIC ═══════════ -->
+  <div id="ar" class="lang-section ar">
+
+    <div class="section">
+      <div class="section-number">القسم ٠١</div>
+      <h2>المقدمة والنطاق</h2>
+      <p>تسري سياسة الخصوصية هذه على جميع تطبيقات الهاتف المحمول ("التطبيقات") التي طوّرها ونشرها <strong>خيّال ك.</strong> ("نحن" أو "المطوّر")، المتاحة على متجر App Store من Apple ومتجر Google Play.</p>
+      <p>باستخدامك أي من تطبيقاتنا أو تنزيلها، فإنك توافق على الممارسات الموضّحة في هذه السياسة. إذا كنت لا توافق، يُرجى عدم استخدام التطبيق.</p>
+      <div class="highlight">هذه سياسة عامة تشمل جميع تطبيقاتنا. قد تمتلك بعض التطبيقات سياسة خصوصية تكميلية خاصة بميزاتها.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٢</div>
+      <h2>المعلومات التي لا نجمعها</h2>
+      <p>صمّمنا تطبيقاتنا مع مراعاة الخصوصية. <strong>نحن لا</strong>:</p>
+      <ul>
+        <li>نطلب منك إنشاء حساب أو التسجيل</li>
+        <li>نجمع اسمك أو بريدك الإلكتروني أو أي معلومات تواصل</li>
+        <li>نصل إلى جهات اتصالك أو كاميرتك أو ميكروفونك أو موقعك</li>
+        <li>نتتبّعك عبر التطبيقات أو المواقع الإلكترونية الأخرى</li>
+        <li>نبيع بياناتك لأي طرف ثالث</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٣</div>
+      <h2>البيانات المخزّنة محلياً على جهازك</h2>
+      <p>تخزّن معظم تطبيقاتنا بيانات التفضيلات والتقدّم <strong>محلياً على جهازك فقط</strong>. يشمل ذلك عادةً:</p>
+      <ul>
+        <li>إعدادات التطبيق وتفضيلاته (مثل اللغة والصوت)</li>
+        <li>تقدّم اللعبة والنتائج والمحتوى المفتوح</li>
+        <li>أرصدة العملات داخل التطبيق</li>
+      </ul>
+      <div class="highlight">لا تغادر هذه البيانات جهازك أبداً. لا تُرسل إلى خوادمنا ولا يمكننا الوصول إليها. يؤدي حذف التطبيق إلى حذف هذه البيانات نهائياً.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٤</div>
+      <h2>خدمات الطرف الثالث</h2>
+      <p>قد تتضمّن تطبيقاتنا خدمات من أطراف ثالثة لها ممارسات خصوصية خاصة بها، منها:</p>
+      <p><strong>Google AdMob (الإعلانات)</strong><br>تستخدم التطبيقات التي تعرض إعلانات خدمة Google AdMob، التي قد تجمع معرّفات الجهاز وعنوان IP وبيانات الاستخدام لتقديم إعلانات ملائمة.</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google ←</a></li>
+        <li><a href="https://support.google.com/admob/answer/6128543" target="_blank">كيف تستخدم Google بيانات AdMob ←</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٥</div>
+      <h2>الإعلانات وإلغاء الاشتراك</h2>
+      <p>التطبيقات المجانية مدعومة بالإعلانات. يمكنك تقييد الإعلانات المخصّصة في أي وقت:</p>
+      <ul>
+        <li><strong>iOS:</strong> الإعدادات ← الخصوصية والأمان ← التتبع ← أوقف "السماح للتطبيقات بطلب التتبع"</li>
+        <li><strong>Android:</strong> الإعدادات ← Google ← الإعلانات ← "حذف معرّف الإعلانات"</li>
+      </ul>
+      <p>يساعدنا الإعلان في إبقاء تطبيقاتنا مجانية للجميع.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٦</div>
+      <h2>الإعلانات المكافِئة</h2>
+      <p>تقدّم بعض تطبيقاتنا إعلانات فيديو مكافِئة <strong>اختيارية</strong> مقابل مزايا داخل التطبيق. لا يُطلب منك مطلقاً مشاهدة إعلان لاستخدام الميزات الأساسية للتطبيق.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٧</div>
+      <h2>التشفير</h2>
+      <p>تستخدم جميع الاتصالات الشبكية في تطبيقاتنا <strong>تشفير HTTPS/TLS</strong> المعياري الذي يوفّره نظام التشغيل. لا نُطبّق خوارزميات تشفير مخصّصة أو خاصّة.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٨</div>
+      <h2>خصوصية الأطفال</h2>
+      <p>تطبيقاتنا غير موجّهة للأطفال دون سن 13 عاماً. لا نجمع عن قصد معلومات شخصية من الأطفال. إذا كنت ولياً للأمر وتعتقد أن طفلك قدّم معلومات شخصية، تواصل معنا على <a href="mailto:khayyal@kherais.com">khayyal@kherais.com</a>.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ٠٩</div>
+      <h2>الاحتفاظ بالبيانات</h2>
+      <p>بما أننا لا نجمع بيانات شخصية على خوادمنا، فلا يوجد احتفاظ بأي بيانات من جهتنا. أي بيانات مخزّنة محلياً تُحذف نهائياً عند إلغاء تثبيت التطبيق.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ١٠</div>
+      <h2>حقوقك</h2>
+      <p>بناءً على موقعك الجغرافي، قد تتمتّع بحقوق تتعلق ببياناتك الشخصية وفق اللوائح المعمول بها (GDPR، CCPA، نظام حماية البيانات الشخصية السعودي). تواصل معنا على <a href="mailto:khayyal@kherais.com">khayyal@kherais.com</a> لممارسة أي من هذه الحقوق.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ١١</div>
+      <h2>التعديلات على هذه السياسة</h2>
+      <p>قد نُحدّث سياسة الخصوصية هذه من وقت لآخر مع تحديث تاريخ السريان. نشجعك على مراجعتها بشكل دوري. استمرارك في استخدام أي من تطبيقاتنا يُعدّ قبولاً للسياسة المحدّثة.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">القسم ١٢</div>
+      <h2>تواصل معنا</h2>
+      <p>إذا كانت لديك أي أسئلة أو مخاوف بشأن سياسة الخصوصية هذه، يُرجى التواصل معنا:</p>
+      <p>
+        <strong>المطوّر:</strong> خيّال ك.<br>
+        <strong>البريد الإلكتروني:</strong> <a href="mailto:khayyal@kherais.com">khayyal@kherais.com</a>
+      </p>
+      <p>نهدف إلى الردّ على جميع استفسارات الخصوصية خلال <strong>٧٢ ساعة</strong>.</p>
+    </div>
+
+  </div><!-- /ar -->
+
+  <footer>
+    <p>© 2026 Khayyal K. · All rights reserved.</p>
+    <p style="margin-top:0.4rem">
+      <a href="developer.html">Developer</a> &nbsp;·&nbsp;
+      <a href="support.html">Support</a> &nbsp;·&nbsp;
+      <a href="mailto:khayyal@kherais.com">khayyal@kherais.com</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.getElementById('en').classList.toggle('visible', lang === 'en');
+    document.getElementById('ar').classList.toggle('visible', lang === 'ar');
+    document.querySelectorAll('.lang-btn').forEach((b, i) => {
+      b.classList.toggle('active', (i === 0 && lang === 'en') || (i === 1 && lang === 'ar'));
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }
+</script>
+</body>
+</html>
