@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy policy for Baloot Majlis — the Saudi Baloot card game for four phones at one table.">
+  <title>Privacy Policy — Baloot Majlis</title>
+  <style>
+    :root {
+      --bg: #0F1A14;
+      --panel: #2D4450;
+      --gold: #E8C66A;
+      --text: #ECEEF0;
+      --muted: #A8B0AB;
+      --link: #E8C66A;
+      --rule: rgba(232, 198, 106, 0.25);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .title h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--gold);
+      margin: 0 0 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .title .updated {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    section {
+      background: var(--panel);
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      margin-bottom: 18px;
+      border: 1px solid var(--rule);
+    }
+
+    section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 0 0 12px;
+      letter-spacing: -0.2px;
+    }
+
+    section p {
+      margin: 0 0 14px;
+      font-size: 15.5px;
+    }
+
+    section p:last-child { margin-bottom: 0; }
+
+    section ul {
+      margin: 6px 0 14px;
+      padding-inline-start: 22px;
+    }
+
+    section li { margin-bottom: 6px; font-size: 15.5px; }
+
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .lang-toggle button {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--rule);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .lang-toggle button.active {
+      color: var(--bg);
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .lang-en, .lang-ar { display: none; }
+    .lang-en.active, .lang-ar.active { display: block; }
+
+    .lang-ar {
+      direction: rtl;
+      text-align: right;
+      font-family: -apple-system, "SF Arabic", "Geeza Pro", "Tahoma", sans-serif;
+    }
+
+    .lang-ar ul { padding-inline-start: 0; padding-inline-end: 22px; }
+
+    .footer {
+      text-align: center;
+      margin-top: 36px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a { color: var(--muted); }
+    .footer a:hover { color: var(--gold); }
+
+    .pill {
+      display: inline-block;
+      background: rgba(232, 198, 106, 0.12);
+      color: var(--gold);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-top: 8px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 480px) {
+      .wrap { padding: 32px 16px 60px; }
+      .title h1 { font-size: 28px; }
+      section { padding: 22px 20px; border-radius: 14px; }
+      section h2 { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="title">
+      <h1>Baloot Majlis</h1>
+      <div class="updated">Privacy Policy · سياسة الخصوصية</div>
+      <span class="pill">Last updated · 2026</span>
+    </div>
+
+    <div class="lang-toggle" role="tablist" aria-label="Language">
+      <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+      <button id="btn-ar" onclick="setLang('ar')">العربية</button>
+    </div>
+
+    <!-- ============================== ENGLISH ============================== -->
+    <div id="lang-en" class="lang-en active">
+
+      <section>
+        <h2>The short version</h2>
+        <p><strong>We do not collect any personal data.</strong> No accounts, no email, no name, no phone number, no location, no contacts. The app is built so groups of friends can play Saudi Baloot together on their phones — that's it.</p>
+      </section>
+
+      <section>
+        <h2>What we collect</h2>
+        <p>Nothing. The app does not require an account, does not ask for personal data, and does not contain analytics or third-party trackers.</p>
+      </section>
+
+      <section>
+        <h2>What gets transmitted</h2>
+        <p>When you play <strong>online</strong>, the app sends game actions (bids, plays, declarations) through our relay server so other phones at your table receive them. These messages contain only:</p>
+        <ul>
+          <li>Your seat number at the table (1–4)</li>
+          <li>The current game state (whose turn, what cards are on the table)</li>
+          <li>The 6-letter room code you are using</li>
+        </ul>
+        <p>The messages are ephemeral — they exist only long enough to be forwarded to the other phones and are not stored after the game ends.</p>
+        <p>When you play in <strong>local mode</strong> (no internet connection), no data leaves your phones at all. They communicate directly with each other over Bluetooth and local wifi using Apple's MultipeerConnectivity framework.</p>
+      </section>
+
+      <section>
+        <h2>What gets stored on your phone</h2>
+        <p>The app stores a few preferences on your device using iOS's standard preferences storage:</p>
+        <ul>
+          <li>Your selected card back and table felt</li>
+          <li>Your scorekeeper (Calculator) totals and round history</li>
+        </ul>
+        <p>This data never leaves your phone and is removed when you delete the app.</p>
+      </section>
+
+      <section>
+        <h2>Children</h2>
+        <p>The app is suitable for all ages. We do not knowingly collect data from anyone, including children under 13.</p>
+      </section>
+
+      <section>
+        <h2>Third parties</h2>
+        <p>We do not share data with anyone, because we do not have any data to share.</p>
+        <p>Game messages travel through our own relay server (hosted on Railway). The relay forwards messages between phones and does not log them.</p>
+      </section>
+
+      <section>
+        <h2>Changes</h2>
+        <p>If we ever change what data the app handles, we will update this page and the App Store listing. Your continued use of the app after a change constitutes acceptance of the updated policy.</p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>Questions or concerns? Email us at <a href="mailto:support@balootmajlis.com">support@balootmajlis.com</a>.</p>
+      </section>
+
+    </div>
+
+    <!-- ============================== ARABIC ============================== -->
+    <div id="lang-ar" class="lang-ar">
+
+      <section>
+        <h2>باختصار</h2>
+        <p><strong>ما نجمع أي بيانات شخصية.</strong> ما في حسابات، ولا إيميل، ولا اسم، ولا رقم جوال، ولا موقع، ولا جهات اتصال. التطبيق صار عشان شلة الأصحاب يلعبون البلوت سوا على جوالاتهم — وبس.</p>
+      </section>
+
+      <section>
+        <h2>إيش نجمع</h2>
+        <p>ما نجمع شي. التطبيق ما يطلب حساب، ولا بيانات شخصية، وما فيه تحليلات ولا متتبعات طرف ثالث.</p>
+      </section>
+
+      <section>
+        <h2>إيش يتم إرساله</h2>
+        <p>لمّا تلعب <strong>أونلاين</strong>، التطبيق يرسل حركات اللعبة (مزايدات، أوراق ملعوبة، تصاريح) عبر سيرفر الترحيل عشان الجوالات الثانية على الطاولة تستقبلها. الرسائل تحتوي بس على:</p>
+        <ul>
+          <li>رقم مقعدك على الطاولة (١–٤)</li>
+          <li>حالة اللعبة الحالية (دور مين، إيش الكروت على الطاولة)</li>
+          <li>كود الغرفة المكوّن من ٦ أحرف</li>
+        </ul>
+        <p>الرسائل عابرة — تعيش فقط بقدر ما يكفي لتمريرها للجوالات الأخرى، وما تُخزّن بعد انتهاء اللعبة.</p>
+        <p>لمّا تلعب <strong>بدون إنترنت</strong>، ما يطلع أي بيانات من جوالاتكم. الجوالات تتواصل مع بعض مباشرة عبر البلوتوث والواي فاي المحلي باستخدام إطار عمل MultipeerConnectivity من Apple.</p>
+      </section>
+
+      <section>
+        <h2>إيش يُحفظ على جوالك</h2>
+        <p>التطبيق يحفظ بعض التفضيلات على جهازك باستخدام التخزين القياسي في iOS:</p>
+        <ul>
+          <li>ظهر الكرت وأرضية الطاولة اللي اخترتها</li>
+          <li>أرقام الحسبة وسجل الجولات</li>
+        </ul>
+        <p>هذي البيانات ما تطلع أبداً من جوالك، وتنحذف لمّا تحذف التطبيق.</p>
+      </section>
+
+      <section>
+        <h2>الأطفال</h2>
+        <p>التطبيق مناسب لكل الأعمار. ما نجمع بيانات من أحد عمداً، بما في ذلك الأطفال دون ١٣ سنة.</p>
+      </section>
+
+      <section>
+        <h2>أطراف ثالثة</h2>
+        <p>ما نشارك بيانات مع أحد، لأنه ما عندنا بيانات نشاركها.</p>
+        <p>رسائل اللعبة تمر عبر سيرفر الترحيل الخاص فينا (مستضاف على Railway). السيرفر يحوّل الرسائل بين الجوالات وما يسجلها.</p>
+      </section>
+
+      <section>
+        <h2>تغييرات</h2>
+        <p>إذا غيّرنا شي يخص البيانات اللي يتعامل معها التطبيق، رح نحدّث هذي الصفحة وصفحة التطبيق على متجر آبل. استمرارك في استخدام التطبيق بعد أي تغيير يعتبر موافقة على السياسة المحدّثة.</p>
+      </section>
+
+      <section>
+        <h2>تواصل معنا</h2>
+        <p>أسئلة أو ملاحظات؟ راسلنا على <a href="mailto:support@balootmajlis.com">support@balootmajlis.com</a></p>
+      </section>
+
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Baloot Majlis · <a href="/">balootmajlis.com</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      const en = document.getElementById('lang-en');
+      const ar = document.getElementById('lang-ar');
+      const btnEn = document.getElementById('btn-en');
+      const btnAr = document.getElementById('btn-ar');
+
+      if (lang === 'ar') {
+        ar.classList.add('active');
+        en.classList.remove('active');
+        btnAr.classList.add('active');
+        btnEn.classList.remove('active');
+        document.documentElement.setAttribute('lang', 'ar');
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        en.classList.add('active');
+        ar.classList.remove('active');
+        btnEn.classList.add('active');
+        btnAr.classList.remove('active');
+        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+      try { localStorage.setItem('bm-privacy-lang', lang); } catch (e) {}
+    }
+
+    // Restore last language preference, or auto-detect from browser
+    (function () {
+      let lang = null;
+      try { lang = localStorage.getItem('bm-privacy-lang'); } catch (e) {}
+      if (!lang) {
+        const browser = (navigator.language || 'en').toLowerCase();
+        lang = browser.startsWith('ar') ? 'ar' : 'en';
+      }
+      setLang(lang);
+    })();
+  </script>
+
+</body>
+</html>
